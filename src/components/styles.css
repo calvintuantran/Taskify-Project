@@ -1,0 +1,145 @@
+.input{
+  display:flex;
+  width: 95%; /* we have not given the width to the input box so it isnt working*/
+  position: relative;  /* we want to position the button inside the input box (absolute position)*/
+  align-items: center;
+}
+
+.input_box{
+  width:100%;
+  border-radius: 50px;
+  padding: 20px 30px;
+  border:none;
+  font-size: 25px;
+  transition: 0.2s; /* animation looks smooth*/
+  box-shadow: inset 0 0 5px black; /* Inset => is for box shadow to be inside*/
+}
+
+.input_box:focus{
+  box-shadow: 0 0 10px 1000px rgba(0,0,0,0.5); /* focus on this means outside gets all the outside in the inside box*/
+  outline:none
+}
+
+.input_submit{
+  position:absolute; /* we want the positon to be inside the box*/
+  width: 70px;
+  height: 50px;
+  margin: 12px;
+  border-radius: 50px;
+  right: 0px; /* to make it to the right*/
+  border: none;
+  font-size: 15px;
+  background-color: #2f74c0;
+  color:white;
+  transition: 0.2 all;
+  box-shadow: 0 0 10px black;
+
+}
+
+.input_submit:hover{
+  background-color: #338ae2;
+}
+
+.input_submit:active{
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
+}
+
+
+.container{
+  /*Display Flex so it appears in one row*/
+  display: flex;
+  width: 95%;
+  /* stlying*/
+  margin-top: 10px;/* spacing for the top*/
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.remove{
+  background-color: rgb(235, 103, 80) !important;
+}
+
+.todos{
+  display: flex;  /* column in one row */
+  width: 47.5%;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgba(50,195,205)
+}
+
+.todos_heading{
+  font-size: 30px;
+  color:white;
+}
+
+.todos_single{
+  display:flex; /* automatically span it*/
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+  transition: 0.2s;
+}
+
+.todos_single:hover{
+  /* box shadow appears after hovering*/
+  box-shadow: 0 0 5px black;
+  transform: scale(103%) /*it grows*/
+}
+
+.todos_single--text{
+  flex: 1; /* takes up the majority of hte space and pushes it ot the side*/
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+/* this is for when u want to foucs*/
+.todos_single--text:focus{
+  outline:none;
+}
+
+.icon{
+  margin-left:10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.remove{
+  background-color: rgb(235,103,80);
+}
+
+.dragactive{
+  background-color: rgb(0,221,236);
+}
+
+.dragcomplete{
+  background-color: rgb(220, 144, 130);
+}
+
+.drag{
+  box-shadow: 0 0 20px black;
+}
+/* responsiveness*/
+
+@media(max-width: 700px){
+  .input{
+      width: 95%
+  }
+  .todos{
+      width: 95%;
+      margin-bottom: 10px;
+  }
+  .container{
+    width: 95%;
+    flex-direction: column
+  }
+}
+
+@media(max-width:1100px){
+  .todos{
+    width: 45%
+  }
+}
