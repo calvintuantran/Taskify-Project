@@ -31,7 +31,7 @@ const TodoList: React.FC<Props> = ({
             {" "}
             {/*inner ref lets you know its a provided drop */}{" "}
             {/*Passing index to recongize which one is moving */}
-            <span className="todos_heading">Active Tasks</span>
+            <span className="todos_heading">Task Assigned</span>
             {todos.map((todo,index) => (
               <SingleToDo
                 index ={index}
@@ -49,7 +49,7 @@ const TodoList: React.FC<Props> = ({
       <Droppable droppableId="TodosRemove">
         {(provided,snapshot) => (
           <div className=  {`todos remove ${snapshot.isDraggingOver?"dragactive": ''}`}  ref={provided.innerRef} {...provided.droppableProps}>
-            <span className="todos_heading">Completed Task</span>
+            <span className="todos_heading">Completed Tasks </span>
             {completedTodos.map((todo,index) => (
               <SingleToDo
                 index ={index}
